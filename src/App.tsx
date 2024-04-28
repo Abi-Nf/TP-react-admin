@@ -1,10 +1,12 @@
-import {
-  Admin,
-  Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
-} from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import { dataProvider } from './dataProvider';
+import { comments, posts } from './resources';
 
-export const App = () => <Admin dataProvider={dataProvider}></Admin>;
+export const App = () => {
+  return (
+    <Admin dataProvider={dataProvider}>
+      <Resource {...posts} />
+      <Resource {...comments} />
+    </Admin>
+  );
+};
